@@ -24,7 +24,7 @@ app = Dash(__name__,
         "width=device-width,initial-scale=1,maximum-scale=1.5,minimum-scale=0.5"}],
         prevent_initial_callbacks=True
         )
-
+server = app.server
 config = {
     "modeBarButtonsToAdd": [
         "drawline",
