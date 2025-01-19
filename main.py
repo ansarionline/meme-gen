@@ -43,6 +43,10 @@ config = {
 
 
 app.layout = [
+    dbc.InputGroup([html.Img(src='assets/favicon.webp',
+            style={'width':'50px','height':'50px',"margin":'5px','border-radius':'15px'}),
+            html.H2('AO MeMe Generator Pro.',style={"margin":'5px'})],
+            style={'backgroundColor':'#eeeeee'}),
     dbc.Row([
         dbc.Col([
             html.H4("Image"),
@@ -94,4 +98,4 @@ def update_image(contents):
         return no_update
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
