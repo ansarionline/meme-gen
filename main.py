@@ -41,6 +41,7 @@ config = {
     "displaylogo":False
 }
 
+app.title = 'AO MeMe Gen'
 
 app.layout = [
     dbc.InputGroup([html.Img(src='assets/favicon.webp',
