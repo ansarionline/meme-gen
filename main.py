@@ -75,7 +75,7 @@ style={'backgroundColor': '#eeeeee'}),
     className="mb-2", style={'width':'100%'}
 )
 
-app.layout = html.Div(dcc.Loading([
+app.layout = html.Div([
     dcc.Location(id="url", refresh=False),
     navbar,
     html.Div(id="page-content"),
@@ -84,20 +84,25 @@ app.layout = html.Div(dcc.Loading([
             [
                 dbc.Row(
                     [
-                        dbc.Col(navbar, width=12),  
+                        dbc.Col(navbar, width=12),
                     ]
                 ),
                 dbc.Row(
                     [
-                        dbc.Col(html.P("© 2025 AO MeMe Gen | Created by Ansari Codes"), className="text-center", width=12),
+                        dbc.Col(
+                            html.P("© 2025 AO MeMe Gen | Created by Ansari Codes"),
+                            className="text-center",
+                            width=12
+                        ),
                     ],
-                    className="mb-3", 
+                    className="mb-3",
                 ),
             ],
-            fluid=True, 
+            fluid=True,
         ),
-        style={"background-color": "#f8f9fa", "padding": "10px 0", "margin-top": "20px"})],
-        fullscreen=True,type='circle',style={'size':'200px'},color='black'))
+        style={"background-color": "#f8f9fa", "padding": "10px 0", "margin-top": "20px"}
+    )
+])
 
 home.register_meme_generation_column(app)
 @app.callback(
