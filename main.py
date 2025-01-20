@@ -25,7 +25,7 @@ app = Dash(__name__,
             suppress_callback_exceptions=True
             )
 app.title = 'AO MeMe Gen'
-
+server = app.server
 navbar = dbc.NavbarSimple(
     children=[
         dbc.NavItem(dbc.NavLink("Home", href="/")),
@@ -145,4 +145,4 @@ def display_page(pathname):
     else:
         return home.home()
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False,use_reloader=False)
