@@ -54,14 +54,14 @@ def meme_generation_column():
                         dbc.Input(type="text", id="meme-text", placeholder="Enter text", className="mb-2")]),
                     dbc.InputGroup([
                     html.H6("Pos", className="mb-4",style={'marginRight':'30px'}),
-                        dbc.Input('text-x', placeholder='Horizontal Pos (0-1)', type='number', min=0, max=1),
-                        dbc.Input('text-y', placeholder='Vertical Pos (0-1)', type='number', min=0, max=1),
-                        dbc.Input('text-angle', placeholder='Angle (0-180)', type='number', min=0, max=180)
+                        dbc.Input('text-x', placeholder='Horizontal Pos (0-1)', type='number', min=0, max=1, value=0.5),
+                        dbc.Input('text-y', placeholder='Vertical Pos (0-1)', type='number', min=0, max=1, value=0.5),
+                        dbc.Input('text-angle', placeholder='Angle (0-180)', type='number', min=0, max=180, value=0)
                     ]),
                     dbc.InputGroup([
                     html.H6("Font", className="mb-4",style={'marginRight':'27px'}),
-                        dbc.Select(id='text-font', placeholder='Font', options=fonts),
-                        dbc.Input(id='text-size', placeholder='Size', value=15, type='number', min=5, step=1),
+                        dbc.Select(id='text-font', placeholder='Font', options=fonts, value="Arial, sans-serif"),
+                        dbc.Input(id='text-size', placeholder='Size', value=20, type='number', min=5, step=1),
                         dbc.Input(type="color", id="text-color", value="#000000", className="mb-2", placeholder="Text Color", style={"height": '40px'})
                     ])
                 ]
