@@ -1,4 +1,5 @@
 from dash import Dash, dcc, html, Input, Output, no_update
+from flask import send_from_directory
 from skimage import io as skio
 import numpy as np
 import plotly.express as px
@@ -26,6 +27,9 @@ app = Dash(__name__,
             )
 app.title = 'AO MeMe Gen'
 server = app.server
+@server.route('/ads.txt')
+def send():
+    return send_from_directory('assets','ads.txt')
 navbar = dbc.NavbarSimple(
     children=[
         dbc.NavItem(dbc.NavLink("Home", href="/")),
@@ -122,7 +126,6 @@ def update_image(contents):
     except Exception as e:
         print(e)
         return no_update,[]
-
 @app.callback(
     Output("page-content", "children", allow_duplicate=True),
     Input("url", "pathname"),
